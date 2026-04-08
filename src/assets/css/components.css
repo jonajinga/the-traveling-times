@@ -39,14 +39,16 @@
   transition: padding-bottom var(--transition-normal), min-height var(--transition-normal);
 }
 
-/* Column 1: hamburger sits at the start */
+/* Column 1: hamburger sits at the start, vertically centered */
 .masthead__nameplate > :first-child {
   justify-self: start;
+  align-self: center;
 }
 
-/* Column 3: actions sit at the end */
+/* Column 3: actions sit at the end, vertically centered */
 .masthead__nameplate > :last-child {
   justify-self: end;
+  align-self: center;
 }
 
 .masthead.is-compact .masthead__nameplate {
@@ -60,6 +62,7 @@
   font-weight: 700;
   line-height: 1;
   text-align: center;
+  align-self: center;
   letter-spacing: -0.02em;
   color: var(--color-ink);
   text-decoration: none;
