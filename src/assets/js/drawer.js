@@ -50,7 +50,7 @@
   var nav = document.querySelector('.site-nav');
   if (!nav) return;
 
-  var keys = ['news', 'opinion', 'analysis', 'arts-culture', 'science-tech', 'history', 'letters', 'library', 'projects', 'games'];
+  var keys = ['travel', 'poetry', 'entertainment', 'fashion', 'art', 'music', 'dance', 'letters'];
 
   function positionDropdown(trigger, dropdown) {
     var navRect     = nav.getBoundingClientRect();
