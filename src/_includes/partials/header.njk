@@ -217,6 +217,8 @@
     <button class="nav-drawer__close" id="nav-drawer-close" type="button" aria-label="Close navigation menu" onclick="var d=document.getElementById('nav-drawer'),o=document.getElementById('nav-drawer-overlay');d.classList.remove('is-open');o.classList.remove('is-open');d.setAttribute('aria-hidden','true');document.getElementById('nav-drawer-toggle').setAttribute('aria-expanded','false');document.body.style.overflow='';">✕</button>
   </div>
 
+  {# ── Sections ── #}
+  <p class="nav-drawer__heading">Sections</p>
   <ul class="nav-drawer__list" role="list">
     {% for item in site.nav %}
     <li>
@@ -232,13 +234,39 @@
 
   <div class="nav-drawer__divider"></div>
 
+  {# ── About ── #}
+  <p class="nav-drawer__heading">About</p>
   <ul class="nav-drawer__list" role="list">
     <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/about/">About</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/masthead/">Masthead</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/contributors/">Contributors</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/features/">Features</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/support/">Support Us</a></li>
+  </ul>
+
+  <div class="nav-drawer__divider"></div>
+
+  {# ── Discover ── #}
+  <p class="nav-drawer__heading">Discover</p>
+  <ul class="nav-drawer__list" role="list">
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/editions/">Editions</a></li>
     <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/archives/">Archives</a></li>
-    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/newsletter/">Newsletter</a></li>
-    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/submit/">Submit</a></li>
-    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/reading-list/">Reading List</a></li>
     <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/topics/">Topics</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/corrections/">Corrections</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/reading-list/">Reading List</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/random/">Surprise Me</a></li>
+  </ul>
+
+  <div class="nav-drawer__divider"></div>
+
+  {# ── Connect ── #}
+  <p class="nav-drawer__heading">Connect</p>
+  <ul class="nav-drawer__list" role="list">
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/newsletter/">Newsletter</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/submit/">Submit a Piece</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="mailto:{{ site.email }}">Email Us</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/feed.xml">RSS Feed</a></li>
+    <li><a class="nav-drawer__link nav-drawer__link--secondary" href="/privacy/">Privacy</a></li>
   </ul>
 
   {# ── Quick actions (icons only, duplicated from masthead for mobile) ── #}
