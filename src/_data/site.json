@@ -1,0 +1,31 @@
+{
+  "title": "The Traveling Times",
+  "shortTitle": "TTT",
+  "description": "Isabelle's creative journal exploring travel, poetry, art, fashion, music, dance, and entertainment.",
+  "url": "https://www.thetravelingtimes.com",
+  "author": "Isabelle",
+  "email": "hello@thetravelingtimes.com",
+  "language": "en",
+  "founded": 2026,
+  "nav": [
+    { "label": "Travel",        "url": "/travel/",        "key": "travel",        "collection": "travel" },
+    { "label": "Poetry",        "url": "/poetry/",        "key": "poetry",        "collection": "poetry" },
+    { "label": "Entertainment", "url": "/entertainment/", "key": "entertainment", "collection": "entertainment" },
+    { "label": "Fashion",       "url": "/fashion/",       "key": "fashion",       "collection": "fashion" },
+    { "label": "Art",           "url": "/art/",           "key": "art",           "collection": "art" },
+    { "label": "Music",         "url": "/music/",         "key": "music",         "collection": "music" },
+    { "label": "Dance",         "url": "/dance/",         "key": "dance",         "collection": "dance" }
+  ],
+  "social": {
+    "rss": "/feed.xml"
+  },
+  "sections": {
+    "travel":        { "label": "Travel",        "color": "#2A7B7B", "description": "Adventures, destinations, and stories from the road." },
+    "poetry":        { "label": "Poetry",        "color": "#7B5EA7", "description": "Original poems and thoughts on words." },
+    "entertainment": { "label": "Entertainment", "color": "#D4635C", "description": "Movies, shows, books, and everything fun." },
+    "fashion":       { "label": "Fashion",       "color": "#C4617A", "description": "Style, trends, and outfit inspiration." },
+    "art":           { "label": "Art",           "color": "#B8862C", "description": "Drawings, paintings, and creative explorations." },
+    "music":         { "label": "Music",         "color": "#3B6FA0", "description": "Favorite songs, artists, and musical adventures." },
+    "dance":         { "label": "Dance",         "color": "#C0693B", "description": "Movement, performances, and dance life." }
+  }
+}
