@@ -326,6 +326,7 @@
 .section-badge--art           { color: var(--color-art); }
 .section-badge--music         { color: var(--color-music); }
 .section-badge--dance         { color: var(--color-dance); }
+.section-badge--letters       { color: var(--color-letters); }
 
 /* ── Article Card ───────────────────────────────────────────── */
 .article-card {

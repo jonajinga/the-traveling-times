@@ -14,7 +14,8 @@
     { "label": "Fashion",       "url": "/fashion/",       "key": "fashion",       "collection": "fashion" },
     { "label": "Art",           "url": "/art/",           "key": "art",           "collection": "art" },
     { "label": "Music",         "url": "/music/",         "key": "music",         "collection": "music" },
-    { "label": "Dance",         "url": "/dance/",         "key": "dance",         "collection": "dance" }
+    { "label": "Dance",         "url": "/dance/",         "key": "dance",         "collection": "dance" },
+    { "label": "Letters",       "url": "/letters/",       "key": "letters",       "collection": "letters" }
   ],
   "social": {
     "rss": "/feed.xml"
@@ -26,6 +27,7 @@
     "fashion":       { "label": "Fashion",       "color": "#C4617A", "description": "Style, trends, and outfit inspiration." },
     "art":           { "label": "Art",           "color": "#B8862C", "description": "Drawings, paintings, and creative explorations." },
     "music":         { "label": "Music",         "color": "#3B6FA0", "description": "Favorite songs, artists, and musical adventures." },
-    "dance":         { "label": "Dance",         "color": "#C0693B", "description": "Movement, performances, and dance life." }
+    "dance":         { "label": "Dance",         "color": "#C0693B", "description": "Movement, performances, and dance life." },
+    "letters":       { "label": "Letters",       "color": "#5D6B7A", "description": "Reader correspondence and letters to the editor." }
   }
 }

@@ -1,0 +1,32 @@
+---
+layout: base
+title: Editions
+description: "Browse collected editions of The Traveling Times."
+permalink: /editions/
+---
+
+<div class="container" style="padding-block: var(--space-16);">
+  <h1 style="font-family: var(--font-masthead); font-size: var(--text-3xl); margin-bottom: var(--space-8);">Editions</h1>
+
+  {% set editions = collections.editionList %}
+  {% if editions.length == 0 %}
+  <p style="color: var(--color-ink-muted); font-style: italic;">No editions published yet. Check back soon.</p>
+  {% else %}
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-6);">
+    {% for editionNum in editions %}
+    {% set editionPosts = collections.allContent | editionArticles(editionNum) %}
+    <a href="/editions/{{ editionNum }}/" class="card" style="text-decoration: none; color: inherit;">
+      <p style="font-family: var(--font-headline); font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-2);">Edition {{ editionNum }}</p>
+      <p style="color: var(--color-ink-muted); font-size: var(--text-sm);">{{ editionPosts.length }} article{{ 's' if editionPosts.length != 1 }}</p>
+      {% if editionPosts.length %}
+      <ul style="list-style: none; margin-top: var(--space-3); font-size: var(--text-sm);">
+        {% for post in editionPosts | limit(3) %}
+        <li style="margin-bottom: var(--space-1);">{{ post.data.title }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>

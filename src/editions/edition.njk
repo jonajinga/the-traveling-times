@@ -1,0 +1,81 @@
+---
+pagination:
+  data: collections.editionList
+  size: 1
+  alias: editionNum
+  addAllPagesToCollections: true
+permalink: /editions/{{ editionNum }}/
+layout: base
+eleventyComputed:
+  title: "Edition {{ editionNum }}"
+  description: "Edition {{ editionNum }} of The Traveling Times."
+---
+
+{% set editionPosts = collections.allContent | editionArticles(editionNum) %}
+
+<div class="container" style="padding-block: var(--space-16);">
+  <p style="margin-bottom: var(--space-2);"><a href="/editions/" style="color: var(--color-link);">&larr; All Editions</a></p>
+  <h1 style="font-family: var(--font-masthead); font-size: var(--text-3xl); margin-bottom: var(--space-8);">Edition {{ editionNum }}</h1>
+
+  {% if editionPosts.length == 0 %}
+  <p style="color: var(--color-ink-muted); font-style: italic;">No articles in this edition.</p>
+  {% else %}
+
+  {# Lead article #}
+  {% set lead = editionPosts[0] %}
+  <article style="margin-bottom: var(--space-8); padding-bottom: var(--space-8); border-bottom: 1px solid var(--color-rule);">
+    {% if lead.data.section %}
+    <span class="section-badge section-badge--{{ lead.data.section | lower | replace(' ', '-') }}">{{ lead.data.section }}</span>
+    {% endif %}
+    <h2 style="font-family: var(--font-headline); font-size: var(--text-2xl); margin: var(--space-2) 0;">
+      <a href="{{ lead.url }}" style="color: var(--color-ink); text-decoration: none;">{{ lead.data.title }}</a>
+    </h2>
+    {% if lead.data.description %}
+    <p style="color: var(--color-ink-muted); font-size: var(--text-md);">{{ lead.data.description }}</p>
+    {% endif %}
+    <p style="color: var(--color-ink-faint); font-size: var(--text-sm); margin-top: var(--space-2);">
+      <time datetime="{{ lead.date | htmlDateString }}">{{ lead.date | readableDate }}</time>
+      &middot; {{ lead.templateContent | readingTime }}
+    </p>
+  </article>
+
+  {# Remaining articles #}
+  {% if editionPosts.length > 1 %}
+  <div class="flow" style="--flow-space: var(--space-4);">
+    {% for post in editionPosts %}
+    {% if not loop.first %}
+    <article style="padding-bottom: var(--space-4); border-bottom: 1px solid var(--color-rule);">
+      {% if post.data.section %}
+      <span class="section-badge section-badge--{{ post.data.section | lower | replace(' ', '-') }}" style="font-size: var(--text-xs);">{{ post.data.section }}</span>
+      {% endif %}
+      <h3 style="font-family: var(--font-headline); font-size: var(--text-md); margin: var(--space-1) 0;">
+        <a href="{{ post.url }}" style="color: var(--color-ink); text-decoration: none;">{{ post.data.title }}</a>
+      </h3>
+      <p style="color: var(--color-ink-faint); font-size: var(--text-sm);">
+        <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+        &middot; {{ post.templateContent | readingTime }}
+      </p>
+    </article>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% endif %}
+
+  {# Edition navigation #}
+  {% set allEditions = collections.editionList %}
+  {% set currentIndex = -1 %}
+  {% for e in allEditions %}
+    {% if e == editionNum %}{% set currentIndex = loop.index0 %}{% endif %}
+  {% endfor %}
+
+  <nav style="display: flex; justify-content: space-between; margin-top: var(--space-12); padding-top: var(--space-6); border-top: 1px solid var(--color-rule);">
+    {% if currentIndex > 0 %}
+    <a href="/editions/{{ allEditions[currentIndex - 1] }}/" style="color: var(--color-link);">&larr; Edition {{ allEditions[currentIndex - 1] }}</a>
+    {% else %}<span></span>{% endif %}
+    {% if currentIndex < allEditions.length - 1 %}
+    <a href="/editions/{{ allEditions[currentIndex + 1] }}/" style="color: var(--color-link);">Edition {{ allEditions[currentIndex + 1] }} &rarr;</a>
+    {% endif %}
+  </nav>
+</div>

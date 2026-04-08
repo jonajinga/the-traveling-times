@@ -1,0 +1,39 @@
+---
+layout: base
+title: Corrections
+description: "A record of corrections made to published articles."
+permalink: /corrections/
+---
+
+<div class="container" style="max-width: var(--max-width-prose); padding-block: var(--space-16);">
+  <h1 style="font-family: var(--font-masthead); font-size: var(--text-3xl); margin-bottom: var(--space-4);">Corrections</h1>
+  <p style="color: var(--color-ink-muted); margin-bottom: var(--space-8);">
+    When we get something wrong, we fix it and note it here.
+  </p>
+
+  {% set correctedArticles = collections.correctionsLog %}
+  {% if correctedArticles.length == 0 %}
+  <p style="color: var(--color-ink-muted); font-style: italic;">No corrections on record.</p>
+  {% else %}
+  <div class="flow" style="--flow-space: var(--space-8);">
+    {% for article in correctedArticles %}
+    <article style="padding-bottom: var(--space-6); border-bottom: 1px solid var(--color-rule);">
+      <h2 style="font-family: var(--font-headline); font-size: var(--text-md);">
+        <a href="{{ article.url }}" style="color: var(--color-ink);">{{ article.data.title }}</a>
+      </h2>
+      <p style="color: var(--color-ink-faint); font-size: var(--text-sm);">
+        {{ article.data.section }} &middot; Published {{ article.date | readableDate }}
+      </p>
+      <ul style="list-style: none; margin-top: var(--space-3);">
+        {% for correction in article.data.corrections %}
+        <li style="margin-bottom: var(--space-2); padding-left: var(--space-4); border-left: 3px solid var(--color-accent); font-size: var(--text-sm);">
+          <time datetime="{{ correction.date }}" style="color: var(--color-ink-faint); display: block;">{{ correction.date }}</time>
+          {{ correction.description }}
+        </li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>

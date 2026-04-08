@@ -32,6 +32,7 @@
   --color-art:           #B8862C;
   --color-music:         #3B6FA0;
   --color-dance:         #C0693B;
+  --color-letters:       #5D6B7A;
 
   /* ── Typography: Families ──────────────────────────────── */
   --font-masthead:   'Playfair Display', Georgia, serif;
@@ -123,6 +124,7 @@
   --color-art:           #D4A84E;
   --color-music:         #6B9EC7;
   --color-dance:         #D4884E;
+  --color-letters:       #8FA0B2;
 }
 
 /* Also respect OS preference when no explicit theme is set */
@@ -153,5 +155,6 @@
     --color-art:           #D4A84E;
     --color-music:         #6B9EC7;
     --color-dance:         #D4884E;
+    --color-letters:       #8FA0B2;
   }
 }

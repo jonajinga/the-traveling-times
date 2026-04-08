@@ -112,7 +112,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // ─── Collections ─────────────────────────────────────────────────────────────
-  const sections = ["travel", "poetry", "entertainment", "fashion", "art", "music", "dance"];
+  const sections = ["travel", "poetry", "entertainment", "fashion", "art", "music", "dance", "letters"];
 
   // All content across every section, newest first
   eleventyConfig.addCollection("allContent", (collectionApi) => {
@@ -158,6 +158,34 @@ module.exports = function (eleventyConfig) {
       if (item.data.author) authorSet.add(item.data.author);
     });
     return [...authorSet].sort();
+  });
+
+  // Edition list — unique edition numbers, sorted descending
+  eleventyConfig.addCollection("editionList", (collectionApi) => {
+    const editions = new Set();
+    collectionApi.getFilteredByGlob("src/content/**/*.md").forEach(item => {
+      if (item.data.edition != null) editions.add(Number(item.data.edition));
+    });
+    return [...editions].sort((a, b) => b - a);
+  });
+
+  // Corrections log — articles with corrections, sorted by most recent correction
+  eleventyConfig.addCollection("correctionsLog", (collectionApi) => {
+    return collectionApi
+      .getFilteredByGlob("src/content/**/*.md")
+      .filter(item => item.data.corrections && item.data.corrections.length > 0)
+      .sort((a, b) => {
+        const aLast = a.data.corrections[a.data.corrections.length - 1].date;
+        const bLast = b.data.corrections[b.data.corrections.length - 1].date;
+        return new Date(bLast) - new Date(aLast);
+      });
+  });
+
+  // Edition articles filter — get all content for a given edition number
+  eleventyConfig.addFilter("editionArticles", (allContent, editionNum) => {
+    return allContent
+      .filter(item => Number(item.data.edition) === Number(editionNum))
+      .sort((a, b) => b.date - a.date);
   });
 
   // ─── Shortcodes ──────────────────────────────────────────────────────────────
