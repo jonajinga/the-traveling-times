@@ -39,6 +39,16 @@
   transition: padding-bottom var(--transition-normal), min-height var(--transition-normal);
 }
 
+/* Column 1: hamburger sits at the start */
+.masthead__nameplate > :first-child {
+  justify-self: start;
+}
+
+/* Column 3: actions sit at the end */
+.masthead__nameplate > :last-child {
+  justify-self: end;
+}
+
 .masthead.is-compact .masthead__nameplate {
   padding-bottom: var(--space-2);
   min-height: 2.75rem;
@@ -95,7 +105,8 @@
 /* ── Masthead responsive: hide action buttons on mobile (moved to drawer) ── */
 @media (max-width: 600px) {
   .masthead__actions {
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
   }
 }
 
