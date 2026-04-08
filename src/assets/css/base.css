@@ -27,6 +27,21 @@ body {
   overflow-x: hidden;
 }
 
+/* ── Custom Cursor (arrow only — links keep the default pointer hand) ── */
+html {
+  cursor: url('/assets/img/cursor-light.svg') 6 1, auto;
+}
+
+[data-theme="dark"] {
+  cursor: url('/assets/img/cursor-dark.svg') 6 1, auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    cursor: url('/assets/img/cursor-dark.svg') 6 1, auto;
+  }
+}
+
 /* ── Selection ──────────────────────────────────────────────── */
 ::selection {
   background-color: var(--color-selection-bg);
