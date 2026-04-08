@@ -1,0 +1,174 @@
+---
+layout: base
+title: Style Guide
+description: Brand and design reference for The Traveling Times visual identity.
+permalink: /style-guide/
+eleventyExcludeFromCollections: true
+---
+
+<div class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-20);">
+  <div class="container--prose">
+
+    <header style="margin-bottom: var(--space-10); padding-bottom: var(--space-6); border-bottom: 3px solid var(--color-ink);">
+      <h1 style="font-family: var(--font-masthead); font-size: clamp(1.8rem, 5vw, 3.815rem); margin-bottom: var(--space-4);">Style Guide</h1>
+      <p style="font-size: var(--text-lg); color: var(--color-ink-muted); font-style: italic;">
+        Visual identity and design reference for The Traveling Times.
+      </p>
+    </header>
+
+    <div class="article-body">
+
+      {# ── Colors: Core ─────────────────────────────────────── #}
+      <h2>Colors &mdash; Core Palette</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+        {% set coreColors = [
+          { name: "Background", hex: "#F5F0E8" },
+          { name: "Surface",    hex: "#FFFDF8" },
+          { name: "Ink",        hex: "#2C2520" },
+          { name: "Muted",      hex: "#6B5F56" },
+          { name: "Faint",      hex: "#9A8E84" }
+        ] %}
+        {% for c in coreColors %}
+        <div style="text-align: center; min-width: 5rem;">
+          <span style="display: block; width: 3rem; height: 3rem; background: {{ c.hex }}; border: 1px solid var(--color-rule); margin: 0 auto var(--space-1);"></span>
+          <strong style="font-family: var(--font-ui); font-size: var(--text-sm); display: block;">{{ c.name }}</strong>
+          <code style="font-size: var(--text-xs);">{{ c.hex }}</code>
+        </div>
+        {% endfor %}
+      </div>
+
+      {# ── Colors: Accent ───────────────────────────────────── #}
+      <h2>Colors &mdash; Accent</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+        {% set accentColors = [
+          { name: "Accent (Terracotta)", hex: "#C0693B" },
+          { name: "Link (Teal)",         hex: "#2A7B7B" },
+          { name: "Selection (Gold)",    hex: "#C49A3C" }
+        ] %}
+        {% for c in accentColors %}
+        <div style="text-align: center; min-width: 5rem;">
+          <span style="display: block; width: 3rem; height: 3rem; background: {{ c.hex }}; border: 1px solid var(--color-rule); margin: 0 auto var(--space-1);"></span>
+          <strong style="font-family: var(--font-ui); font-size: var(--text-sm); display: block;">{{ c.name }}</strong>
+          <code style="font-size: var(--text-xs);">{{ c.hex }}</code>
+        </div>
+        {% endfor %}
+      </div>
+
+      {# ── Colors: Section ──────────────────────────────────── #}
+      <h2>Colors &mdash; Sections</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+        {% set sectionColors = [
+          { name: "Travel",        hex: "#2A7B7B" },
+          { name: "Poetry",        hex: "#7B5EA7" },
+          { name: "Entertainment", hex: "#D4635C" },
+          { name: "Fashion",       hex: "#C4617A" },
+          { name: "Art",           hex: "#B8862C" },
+          { name: "Music",         hex: "#3B6FA0" },
+          { name: "Dance",         hex: "#C0693B" },
+          { name: "Letters",       hex: "#5D6B7A" }
+        ] %}
+        {% for c in sectionColors %}
+        <div style="text-align: center; min-width: 5rem;">
+          <span style="display: block; width: 3rem; height: 3rem; background: {{ c.hex }}; border: 1px solid var(--color-rule); margin: 0 auto var(--space-1);"></span>
+          <strong style="font-family: var(--font-ui); font-size: var(--text-sm); display: block;">{{ c.name }}</strong>
+          <code style="font-size: var(--text-xs);">{{ c.hex }}</code>
+        </div>
+        {% endfor %}
+      </div>
+
+      {# ── Typography ───────────────────────────────────────── #}
+      <h2>Typography</h2>
+
+      <div style="margin-bottom: var(--space-6);">
+        <p style="font-family: var(--font-ui); font-size: var(--text-sm); color: var(--color-ink-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-1);">Masthead &mdash; Playfair Display</p>
+        <p style="font-family: var(--font-masthead); font-size: var(--text-3xl); line-height: var(--leading-tight); margin-bottom: var(--space-6);">The Traveling Times</p>
+
+        <p style="font-family: var(--font-ui); font-size: var(--text-sm); color: var(--color-ink-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-1);">Headlines &mdash; Lora</p>
+        <p style="font-family: var(--font-headline); font-size: var(--text-2xl); line-height: var(--leading-snug); margin-bottom: var(--space-6);">A Beginner&rsquo;s Guide to Painting with Watercolors</p>
+
+        <p style="font-family: var(--font-ui); font-size: var(--text-sm); color: var(--color-ink-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-1);">Body &mdash; Source Serif 4</p>
+        <p style="font-family: var(--font-body); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-6);">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+        <p style="font-family: var(--font-ui); font-size: var(--text-sm); color: var(--color-ink-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-1);">UI &mdash; DM Sans</p>
+        <p style="font-family: var(--font-ui); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-6);">TRAVEL &middot; 5 MIN READ &middot; MARCH 15, 2026</p>
+      </div>
+
+      {# ── Type Scale ───────────────────────────────────────── #}
+      <h2>Type Scale</h2>
+      <div style="margin-bottom: var(--space-6);">
+        {% set sizes = [
+          { token: "text-4xl", value: "3.815rem" },
+          { token: "text-3xl", value: "3.052rem" },
+          { token: "text-2xl", value: "2.441rem" },
+          { token: "text-xl",  value: "1.953rem" },
+          { token: "text-lg",  value: "1.563rem" },
+          { token: "text-md",  value: "1.25rem" },
+          { token: "text-base", value: "1rem" },
+          { token: "text-sm",  value: "0.8rem" },
+          { token: "text-xs",  value: "0.64rem" }
+        ] %}
+        {% for s in sizes %}
+        <div style="display: flex; align-items: baseline; gap: var(--space-4); margin-bottom: var(--space-3); border-bottom: 1px solid var(--color-rule); padding-bottom: var(--space-2);">
+          <code style="font-size: var(--text-xs); min-width: 6rem; color: var(--color-ink-muted);">--{{ s.token }}</code>
+          <span style="font-size: var(--{{ s.token }}); font-family: var(--font-headline); line-height: 1.2;">The Traveling Times</span>
+        </div>
+        {% endfor %}
+      </div>
+
+      {# ── Section Badges ───────────────────────────────────── #}
+      <h2>Section Badges</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-6);">
+        {% set sections = ["travel", "poetry", "entertainment", "fashion", "art", "music", "dance", "letters"] %}
+        {% for s in sections %}
+        <span class="section-badge section-badge--{{ s }}">{{ s | capitalize }}</span>
+        {% endfor %}
+      </div>
+
+      {# ── Buttons ──────────────────────────────────────────── #}
+      <h2>Buttons</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; margin-bottom: var(--space-6);">
+        <a href="#" class="btn" onclick="return false;">Default Button</a>
+        <a href="#" class="btn btn--accent" onclick="return false;">Accent Button</a>
+      </div>
+      <p style="font-size: var(--text-sm); color: var(--color-ink-muted);">
+        Buttons use <code>--color-ink</code> by default, with <code>--color-accent</code> for the accent variant. Hover swaps background and text colors.
+      </p>
+
+      {# ── Spacing ──────────────────────────────────────────── #}
+      <h2>Spacing Scale</h2>
+      <p style="margin-bottom: var(--space-4);">The spacing scale uses <code>--space-{n}</code> tokens based on a 0.25rem (4px) base unit.</p>
+      <div style="margin-bottom: var(--space-6);">
+        {% set spaces = [
+          { token: "space-1",  value: "0.25rem" },
+          { token: "space-2",  value: "0.5rem" },
+          { token: "space-3",  value: "0.75rem" },
+          { token: "space-4",  value: "1rem" },
+          { token: "space-6",  value: "1.5rem" },
+          { token: "space-8",  value: "2rem" },
+          { token: "space-10", value: "2.5rem" },
+          { token: "space-12", value: "3rem" },
+          { token: "space-16", value: "4rem" },
+          { token: "space-20", value: "5rem" },
+          { token: "space-24", value: "6rem" }
+        ] %}
+        {% for s in spaces %}
+        <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-2);">
+          <code style="font-size: var(--text-xs); min-width: 6rem; color: var(--color-ink-muted);">--{{ s.token }}</code>
+          <span style="display: inline-block; height: 0.75rem; width: var(--{{ s.token }}); background: var(--color-accent); border-radius: var(--radius-sm);"></span>
+          <span style="font-size: var(--text-xs); color: var(--color-ink-faint);">{{ s.value }}</span>
+        </div>
+        {% endfor %}
+      </div>
+
+      {# ── Borders & Radius ─────────────────────────────────── #}
+      <h2>Borders &amp; Radius</h2>
+      <p style="margin-bottom: var(--space-2);">
+        <code>--radius-sm: 2px</code> &nbsp; <code>--radius-md: 4px</code>
+      </p>
+      <p style="font-size: var(--text-sm); color: var(--color-ink-muted); margin-bottom: var(--space-6);">
+        Corners are kept tight for a print-editorial feel. Rule colors: <code>--color-rule</code> for light dividers, <code>--color-rule-heavy</code> for emphasis.
+      </p>
+
+    </div>
+  </div>
+</div>
