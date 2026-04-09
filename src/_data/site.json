@@ -15,7 +15,9 @@
     { "label": "Art",           "url": "/art/",           "key": "art",           "collection": "art" },
     { "label": "Music",         "url": "/music/",         "key": "music",         "collection": "music" },
     { "label": "Dance",         "url": "/dance/",         "key": "dance",         "collection": "dance" },
-    { "label": "Letters",       "url": "/letters/",       "key": "letters",       "collection": "letters" }
+    { "label": "Letters",       "url": "/letters/",       "key": "letters",       "collection": "letters" },
+    { "label": "Dear Izzy",    "url": "/dear-izzy/",     "key": "dear-izzy",     "collection": "dear-izzy" },
+    { "label": "Reviews",      "url": "/reviews/",       "key": "reviews",       "collection": "reviews" }
   ],
   "social": {
     "rss": "/feed.xml"
@@ -28,6 +30,8 @@
     "art":           { "label": "Art",           "color": "#B8862C", "description": "Drawings, paintings, and creative explorations." },
     "music":         { "label": "Music",         "color": "#3B6FA0", "description": "Favorite songs, artists, and musical adventures." },
     "dance":         { "label": "Dance",         "color": "#C0693B", "description": "Movement, performances, and dance life." },
-    "letters":       { "label": "Letters",       "color": "#5D6B7A", "description": "Reader correspondence and letters to the editor." }
+    "letters":       { "label": "Letters",       "color": "#5D6B7A", "description": "Reader correspondence and letters to the editor." },
+    "dear-izzy":     { "label": "Dear Izzy",    "color": "#D4943A", "description": "Isabelle's advice column — send in your questions and get honest, thoughtful answers." },
+    "reviews":       { "label": "Reviews",       "color": "#4A8B6E", "description": "Honest reviews of books, movies, TV shows, music, and more." }
   }
 }

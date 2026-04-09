@@ -112,7 +112,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // ─── Collections ─────────────────────────────────────────────────────────────
-  const sections = ["travel", "poetry", "entertainment", "fashion", "art", "music", "dance", "letters"];
+  const sections = ["travel", "poetry", "entertainment", "fashion", "art", "music", "dance", "letters", "dear-izzy", "reviews"];
 
   // All content across every section, newest first
   eleventyConfig.addCollection("allContent", (collectionApi) => {

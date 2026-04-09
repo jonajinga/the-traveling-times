@@ -33,6 +33,8 @@
   --color-music:         #3B6FA0;
   --color-dance:         #C0693B;
   --color-letters:       #5D6B7A;
+  --color-dear-izzy:     #D4943A;
+  --color-reviews:       #4A8B6E;
 
   /* ── Typography: Families ──────────────────────────────── */
   --font-masthead:   'Playfair Display', Georgia, serif;
@@ -125,6 +127,8 @@
   --color-music:         #6B9EC7;
   --color-dance:         #D4884E;
   --color-letters:       #8FA0B2;
+  --color-dear-izzy:     #E8B35E;
+  --color-reviews:       #6BB892;
 }
 
 /* Also respect OS preference when no explicit theme is set */
@@ -156,5 +160,7 @@
     --color-music:         #6B9EC7;
     --color-dance:         #D4884E;
     --color-letters:       #8FA0B2;
+    --color-dear-izzy:     #E8B35E;
+    --color-reviews:       #6BB892;
   }
 }

@@ -245,6 +245,10 @@
 .site-nav:has(#nav-dance:focus)         #dropdown-dance,
 .site-nav:has(#nav-letters:hover)       #dropdown-letters,
 .site-nav:has(#nav-letters:focus)       #dropdown-letters,
+.site-nav:has(#nav-dear-izzy:hover)    #dropdown-dear-izzy,
+.site-nav:has(#nav-dear-izzy:focus)    #dropdown-dear-izzy,
+.site-nav:has(#nav-reviews:hover)      #dropdown-reviews,
+.site-nav:has(#nav-reviews:focus)      #dropdown-reviews,
 .nav-dropdown:hover,
 .nav-dropdown:focus-within {
   opacity: 1;
@@ -362,6 +366,8 @@
 .section-badge--music         { color: var(--color-music); }
 .section-badge--dance         { color: var(--color-dance); }
 .section-badge--letters       { color: var(--color-letters); }
+.section-badge--dear-izzy { color: var(--color-dear-izzy); }
+.section-badge--reviews { color: var(--color-reviews); }
 
 /* ── Article Card ───────────────────────────────────────────── */
 .article-card {
